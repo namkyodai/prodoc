@@ -1,0 +1,45 @@
+2018-08-05 13:20:20 Error: [PDOException] SQLSTATE[HY000] [1049] Unknown database 'pom001' in /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Driver.php on line 92
+Stack Trace:
+#0 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Driver.php(92): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php(106): Cake\Database\Driver->_connect('mysql:host=loca...', Array)
+#2 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Schema/BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Dialect/MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Connection.php(391): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(1034): Cake\Database\Connection->getSchemaCollection()
+#8 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(988): Bake\Shell\Task\ModelTask->_getAllTables()
+#9 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(212): Bake\Shell\Task\ModelTask->listAll()
+#10 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#11 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'activity_types', 'ActivityTypes')
+#12 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('ActivityTypes')
+#13 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/BakeShell.php(273): Bake\Shell\Task\ModelTask->main('ActivityTypes')
+#14 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('ActivityTypes', 0)
+#15 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/BakeShell.php(274): Cake\Collection\Collection->each(Object(Closure))
+#16 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Console/Shell.php(518): Bake\Shell\BakeShell->all('activity_types')
+#17 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Console/CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#18 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Console/CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#19 /var/www/html/prodoc/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#20 {main}
+
+
+2018-08-05 15:18:57 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pomplus001.documentsa' doesn't exist in /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Schema/Collection.php on line 131
+Stack Trace:
+#0 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'documentsa', Array, Object(Cake\Database\Schema\TableSchema))
+#1 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(63): Cake\Database\Schema\Collection->describe('documentsa', Array)
+#2 /var/www/html/prodoc/vendor/cakephp/cakephp/src/ORM/Table.php(548): Cake\Database\Schema\CachedCollection->describe('documentsa')
+#3 /var/www/html/prodoc/vendor/cakephp/cakephp/src/ORM/Table.php(673): Cake\ORM\Table->getSchema()
+#4 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(220): Cake\ORM\Table->getPrimaryKey()
+#5 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'documentsa', 'Documentsa')
+#7 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('Documentsa')
+#8 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/BakeShell.php(273): Bake\Shell\Task\ModelTask->main('Documentsa')
+#9 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Documentsa', 0)
+#10 /var/www/html/prodoc/vendor/cakephp/bake/src/Shell/BakeShell.php(274): Cake\Collection\Collection->each(Object(Closure))
+#11 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Console/Shell.php(518): Bake\Shell\BakeShell->all('documentsa')
+#12 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Console/CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#13 /var/www/html/prodoc/vendor/cakephp/cakephp/src/Console/CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 /var/www/html/prodoc/bin/cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+
